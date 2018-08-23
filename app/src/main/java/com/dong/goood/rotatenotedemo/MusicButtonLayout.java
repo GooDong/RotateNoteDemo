@@ -69,7 +69,7 @@ public class MusicButtonLayout extends RelativeLayout {
         }
     }
 
-    public void playMusic() {
+    public void changeAnimStatus() {
         if (state == STATE_PLAYING) {
             angle2 = (angle2 + angle) % 360;//可以取余也可以不取，看实际的需求
             musicAnim.cancel();

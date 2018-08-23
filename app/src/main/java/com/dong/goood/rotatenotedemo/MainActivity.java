@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     ConstraintLayout outSideCL;
+    RotateNoteView mRotateNoteView;
 
     ImageView note_quaver_1;
 
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         final MusicButtonLayout btnMusic = findViewById(R.id.musicButtonRl);
 
         outSideCL = findViewById(R.id.outSideCL);
+        mRotateNoteView = findViewById(R.id.rotate_note_fl);
 
         note_quaver_1 = findViewById(R.id.note_quaver_1);
         note_quaver_2 = findViewById(R.id.note_quaver_2);
@@ -71,15 +73,21 @@ public class MainActivity extends AppCompatActivity {
         btnMusic.setOnClickListener(new View.OnClickListener() {//单击播放或暂停
             @Override
             public void onClick(View v) {
-                btnMusic.playMusic();
+                btnMusic.changeAnimStatus();
+
+                mRotateNoteView.initView();
+                mRotateNoteView.setMusicInfoAvatar(getResources().getDrawable(R.drawable.ic_launcher_foreground));
+
                 try {
                     if (mPlayer != null) {
                         if (mPlayer.isPlaying()) {
                             mPlayer.pause();
                             stopAnim();
+                            mRotateNoteView.stopAnim();
                         } else {
                             mPlayer.start();
                             startAnim();
+                            mRotateNoteView.startAnim();
                         }
                     }
                 } catch (Exception e) {
@@ -114,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
     /*设置动画路径*/
     public void setPath() {
         path = new AnimatorPath();
-        path.moveTo(note_quaver_1_rect.centerX() - outSideCL__rect.left, note_quaver_1_rect.centerY() - outSideCL__rect.top);
-        path.secondBesselCurveTo(0, outSideCL__rect.centerY() - outSideCL__rect.top, outSideCL__rect.centerX() - outSideCL__rect.left, 0);
+        path.moveTo(note_quaver_1_rect.left - outSideCL__rect.left, note_quaver_1_rect.top - outSideCL__rect.top);
+        path.secondBesselCurveTo(0, outSideCL__rect.centerY() - outSideCL__rect.top, (outSideCL__rect.centerX() - outSideCL__rect.left) >> 1, 0);
     }
 
     private void stopAnim() {

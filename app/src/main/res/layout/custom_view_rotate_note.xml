@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/out_side_cl"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        tools:background="@color/colorAccent">
+
+        <com.dong.goood.rotatenotedemo.MusicButtonLayout
+            android:id="@+id/music_button_mb_rl"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_vinyl_record_"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/music_info_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true" />
+
+        </com.dong.goood.rotatenotedemo.MusicButtonLayout>
+
+        <ImageView
+            android:id="@+id/note_quaver_1"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/bg_note_quaver"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@+id/music_button_mb_rl"
+            app:layout_constraintRight_toRightOf="@+id/music_button_mb_rl"
+            app:layout_constraintTop_toBottomOf="@+id/music_button_mb_rl" />
+
+        <ImageView
+            android:id="@+id/note_quaver_2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/bg_note_double_quaver"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@+id/music_button_mb_rl"
+            app:layout_constraintRight_toRightOf="@+id/music_button_mb_rl"
+            app:layout_constraintTop_toBottomOf="@+id/music_button_mb_rl" />
+
+        <ImageView
+            android:id="@+id/note_quaver_3"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/bg_note_quaver"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@+id/music_button_mb_rl"
+            app:layout_constraintRight_toRightOf="@+id/music_button_mb_rl"
+            app:layout_constraintTop_toBottomOf="@+id/music_button_mb_rl" />
+
+        <ImageView
+            android:id="@+id/note_quaver_4"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/bg_note_double_quaver"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@+id/music_button_mb_rl"
+            app:layout_constraintRight_toRightOf="@+id/music_button_mb_rl"
+            app:layout_constraintTop_toBottomOf="@+id/music_button_mb_rl" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</merge>
